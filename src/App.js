@@ -29,7 +29,7 @@ function App() {
 
     try {
       const res = await api.post("/repositories", data);
-      setRep(res.data);
+      setRep([...res, res.data]);
     } catch (error) {
       alert(error);
     }
